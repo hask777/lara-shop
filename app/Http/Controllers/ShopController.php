@@ -51,7 +51,11 @@ class ShopController extends Controller
     public function show($slug)
     {
         $product = Product::where('slug', $slug)->firstOrFail();
-        return view('product')->with('product', $product);
+        $relative = Product::where('slug', '!=', $slug)->inRandomOrder()->take(6)->get();
+        return view('product')->with([
+            'product' => $product,
+            'relative' => $relative
+        ]);
     }
 
     /**

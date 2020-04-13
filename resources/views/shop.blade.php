@@ -1,16 +1,17 @@
 @extends('main')
 @section('content')
     <!-- Begin Li's Breadcrumb Area -->
-            <div class="breadcrumb-area">
-                <div class="container">
-                    <div class="breadcrumb-content">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li class="active">Shop List Left Sidebar</li>
-                        </ul>
-                    </div>
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        <li>Магазин</li>
+
+                    </ul>
                 </div>
             </div>
+        </div>
             <!-- Li's Breadcrumb Area End Here -->
             <!-- Begin Li's Content Wraper Area -->
             <div class="content-wraper pt-60 pb-60">
