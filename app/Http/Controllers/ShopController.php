@@ -39,7 +39,9 @@ class ShopController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Cart::add($request->id, $request->name, 1, $request->price)
+        //     ->associate('App\Product');
+        // return redirect('/cart')->with('status', 'Profile updated!');
     }
 
     /**
@@ -51,7 +53,7 @@ class ShopController extends Controller
     public function show($slug)
     {
         $product = Product::where('slug', $slug)->firstOrFail();
-        $relative = Product::where('slug', '!=', $slug)->inRandomOrder()->take(6)->get();
+        $relative = Product::where('slug', '!=', $slug)->relative()->get();
         return view('product')->with([
             'product' => $product,
             'relative' => $relative

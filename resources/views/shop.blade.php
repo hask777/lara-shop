@@ -152,7 +152,16 @@
                                                             <div class="shop-add-action mb-xs-30">
                                                                 <ul class="add-actions-link">
                                                                     <li class="add-cart"><a href="#">Add to cart</a></li>
-                                                                    <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a></li>
+                                                                    <form action="{{ route('cart.store', $product) }}" method="POST">
+                                                                       {{ csrf_field() }}
+                                                                       <input type="hidden" name="id" value="{{ $product->id }}">
+                                                                       <input type="hidden" name="name" value="{{ $product->name }}">
+                                                                       <input type="hidden" name="price" value="{{ $product->price }}">
+                                                                       <button type="submit" class="add-cart">Add to Cart</button>
+                                                                   </form>
+                                                                    <li class="wishlist"><a href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a>
+                                                                    </li>
+                                                                    
                                                                     <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
                                                                 </ul>
                                                             </div>

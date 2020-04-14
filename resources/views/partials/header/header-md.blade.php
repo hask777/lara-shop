@@ -96,7 +96,7 @@
                         <!-- Begin Header Middle Wishlist Area -->
                         <li class="hm-wishlist">
                             <a href="wishlist.html">
-                                <span class="cart-item-count wishlist-item-count">0</span>
+                                <span class="cart-item-count wishlist-item-count">{{Cart::instance('default')->count()}}</span>
                                 <i class="fa fa-heart-o"></i>
                             </a>
                         </li>
@@ -106,7 +106,12 @@
                             <div class="hm-minicart-trigger">
                                 <span class="item-icon"></span>
                                 <span class="item-text">£80.00
-                                    <span class="cart-item-count">2</span>
+                                    <span class="cart-item-count">
+                                        @if(Cart::instance('default')->count() > 0)
+                                            {{Cart::instance('default')->count()}}
+                                        @endif
+
+                                    </span>
                                 </span>
                             </div>
                             <span></span>
