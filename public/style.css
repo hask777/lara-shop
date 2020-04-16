@@ -104,7 +104,7 @@ a,
 button,
 input {
 	outline: medium none;
-	color: #a5a5a5;
+
 }
 button:focus {
 	outline: none;
@@ -2365,7 +2365,7 @@ textarea:focus {
 	background: #fed700;
 	border-color: #fed700;
 }
-.add-actions-link li a {
+.add-actions-link li a, button {
 	color: #a4a4a4;
 	display: block;
 	font-size: 17px;
@@ -2376,20 +2376,24 @@ textarea:focus {
 	-webkit-transition: all 300ms ease-in 0s;
 	transition: all 300ms ease-in 0s;
 }
-.add-actions-link li.add-cart.active a {
+.add-actions-link li.add-cart.active a, button[type="submit"] {
 	color: #242424;
+	display: inline-block;
+	border: none;
+	background-color: transparent;
+	text-align: center;
 }
 .add-actions-link li:hover a,
-.add-actions-link li.add-cart:hover a {
+.add-actions-link li.add-cart:hover a, button {
 	color: #242424;
 }
-.add-actions-link li.add-cart > a {
+.add-actions-link li.add-cart > a, button {
 	color: #a4a4a4;
 	font-size: 13px;
 	font-weight: 500;
 	text-transform: uppercase;
 }
-.add-actions-link li.add-cart > a i {
+.add-actions-link li.add-cart > a, button i {
   font-size: 16px;
   line-height: 22px;
 }
