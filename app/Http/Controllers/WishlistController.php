@@ -6,19 +6,21 @@ use Illuminate\Http\Request;
 use App\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
-class MainController extends Controller
+class WishlistController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
+     * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $products = Product::inRandomOrder()->take(8)->get();
-        // dd($products);
 
-        return view('index')->with('products', $products);
+        $relative = Product::relative()->get();
+        return view('wishlist')->with([
+            'relative' => $relative
+        ]);
     }
 
     /**
@@ -39,19 +41,21 @@ class MainController extends Controller
      */
     public function store(Request $request)
     {
-      // $duplicates = Cart::search(function ($cartItem, $rowId) use ($request) {
-      //     return $cartItem->id === $request->id;
-      // });
-      //
-      // if ($duplicates->isNotEmpty()) {
-      //     return redirect()->route('cart.index')->with('success_message', 'Item is already in your cart!');
-      // }
-      //
-      // Cart::add($request->id, $request->name, 1, $request->price)
-      //     ->associate('App\Product');
-      //
-      // return redirect('/cart')->with('success_message', 'Product successful added!');
+        $duplicates = Cart::search(function ($cartItem, $rowId) use ($request) {
+            return $cartItem->id === $request->id;
+        });
+
+        if ($duplicates->isNotEmpty()) {
+            return redirect()->route('cart.index')->with('success_message', 'Item is already in your cart!');
+        }
+
+        Cart::add($request->id, $request->name, 1, $request->price)
+            ->associate('App\Product');
+
+        return redirect('/wishlist')->with('success_message', 'Product successful added!');
     }
+
+
 
     /**
      * Display the specified resource.
@@ -95,6 +99,24 @@ class MainController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+    }
+
+    /**
+     * Add product in to whishlist.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function addToWishlist($id)
+    {
+        $item = Cart::get($id);
+
+        Cart::remove($id);
+
+        Cart::instance('wishlistItem')->add($item->id, $item->name, 1, $item->price)
+            ->associate('App/Product');
+
+        return redirect()->route('cart.wishlist');
     }
 }

@@ -1,13 +1,19 @@
 <?php
 use Gloudemans\Shoppingcart\Facades\Cart;
 
+// Main
 Route::get('/', 'MainController@index')->name('index');
+// Shop
 Route::get('/shop', 'ShopController@index')->name('shop.index');
 Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');
+// Cart
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart', 'CartController@store')->name('cart.store');
 Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
-Route::post('/cart/whishlist/{product}', 'CartController@addToWishlist')->name('cart.wishlist');
+Route::get('/cart/{product}', 'CartController@addToWishlist')->name('cart.wishlist');
+// Whishlist
+Route::get('/wishlist', 'WishlistController@index')->name('wishlist.index');
+Route::post('/wishlist/{product}', 'WishlistController@store')->name('wishlist.store');
 
 Route::get('empty', function(){
     Cart::destroy();
