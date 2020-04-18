@@ -41,17 +41,17 @@
                 </li>
 
                 <li>
-                  <form action="{{ route('wishlist.store', $product->id) }}" method="POST">
-                     {{ csrf_field() }}
-                     <input type="hidden" name="id" value="{{ $product->id }}">
-                     <input type="hidden" name="name" value="{{ $product->name }}">
-                     <input type="hidden" name="price" value="{{ $product->price }}">
-                     <button type="submit" class="links-details"> <i class="fa fa-heart-o"></i></button>
-                  </form>
+                    <form action="{{ route('wishlist.store', $product->id) }}" method="POST">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ $product->id }}">
+                        <input type="hidden" name="name" value="{{ $product->name }}">
+                        <input type="hidden" name="price" value="{{ $product->price }}">
+                        <button type="submit" class="links-details"> <i class="fa fa-heart-o"></i></button>
+                    </form>
                 </li>
                 <li>
                 <a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i>
-                </a>
+                    </a>
                 </li>
             </ul>
         </div>

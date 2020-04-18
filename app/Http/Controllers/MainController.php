@@ -17,7 +17,6 @@ class MainController extends Controller
     {
         $products = Product::inRandomOrder()->take(8)->get();
         // dd($products);
-
         return view('index')->with('products', $products);
     }
 
@@ -39,18 +38,7 @@ class MainController extends Controller
      */
     public function store(Request $request)
     {
-      // $duplicates = Cart::search(function ($cartItem, $rowId) use ($request) {
-      //     return $cartItem->id === $request->id;
-      // });
-      //
-      // if ($duplicates->isNotEmpty()) {
-      //     return redirect()->route('cart.index')->with('success_message', 'Item is already in your cart!');
-      // }
-      //
-      // Cart::add($request->id, $request->name, 1, $request->price)
-      //     ->associate('App\Product');
-      //
-      // return redirect('/cart')->with('success_message', 'Product successful added!');
+
     }
 
     /**

@@ -44,7 +44,7 @@
                     <div class="col-lg-7 col-md-6 col-sm-6">
                         <div class="product-details-view-content pt-60">
                             <div class="product-info">
-                                <h2>Today is a good day Framed poster</h2>
+                            <h2></h2>
                                 <span class="product-details-ref">Reference: demo_15</span>
                                 <div class="rating-box pt-20">
                                     <ul class="rating rating-with-review-item">
@@ -58,7 +58,7 @@
                                     </ul>
                                 </div>
                                 <div class="price-box pt-20">
-                                    <span class="new-price new-price-2">$57.98</span>
+                                    <span class="new-price new-price-2">${{dump($products)}}</span>
                                 </div>
                                 <div class="product-desc">
                                     <p>
@@ -107,4 +107,6 @@
             </div>
         </div>
     </div>
+    
 </div>
+
