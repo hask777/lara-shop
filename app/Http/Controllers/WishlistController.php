@@ -102,21 +102,4 @@ class WishlistController extends Controller
 
     }
 
-    /**
-     * Add product in to whishlist.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function addToWishlist($id)
-    {
-        $item = Cart::get($id);
-
-        Cart::remove($id);
-
-        Cart::instance('wishlistItem')->add($item->id, $item->name, 1, $item->price)
-            ->associate('App/Product');
-
-        return redirect()->route('cart.wishlist');
-    }
 }

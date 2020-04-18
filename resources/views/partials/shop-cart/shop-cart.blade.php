@@ -31,28 +31,23 @@
         <div class="add-actions">
             <ul class="add-actions-link">
                 <li class="add-cart active">
-                <form action="{{ route('cart.index', $product) }}" method="POST" class="">
-                    {{ csrf_field() }}
-                    <input type="hidden" name="id" value="{{ $product->id }}">
-                    <input type="hidden" name="name" value="{{ $product->name }}">
-                    <input type="hidden" name="price" value="{{ $product->price }}">
-                    <button type="submit" class="">В корзину</button>
-                </form>
+                    <form action="{{ route('cart.index', $product) }}" method="POST" class="">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ $product->id }}">
+                        <input type="hidden" name="name" value="{{ $product->name }}">
+                        <input type="hidden" name="price" value="{{ $product->price }}">
+                        <button type="submit" class="">В корзину</button>
+                    </form>
                 </li>
 
                 <li>
-                {{-- <a class="links-details" href="{{route('wishlist.index') }}">
-                    <i class="fa fa-heart-o"></i>
-                </a> --}}
-
                   <form action="{{ route('wishlist.store', $product->id) }}" method="POST">
                      {{ csrf_field() }}
                      <input type="hidden" name="id" value="{{ $product->id }}">
                      <input type="hidden" name="name" value="{{ $product->name }}">
                      <input type="hidden" name="price" value="{{ $product->price }}">
-                     <button type="submit" class="add-cart">Add to wishlist</button>
+                     <button type="submit" class="links-details"> <i class="fa fa-heart-o"></i></button>
                   </form>
-
                 </li>
                 <li>
                 <a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i>

@@ -2365,14 +2365,16 @@ textarea:focus {
 	background: #fed700;
 	border-color: #fed700;
 }
-.add-actions-link li a, button {
+.add-actions-link li a, .add-actions-link li button {
 	color: #a4a4a4;
 	display: block;
+	width: 100%;
 	font-size: 17px;
 	font-weight: 400;
 	padding: 0;
 	position: relative;
 	text-align: center;
+	text-transform: capitalize;
 	-webkit-transition: all 300ms ease-in 0s;
 	transition: all 300ms ease-in 0s;
 }
@@ -3421,22 +3423,37 @@ li.right-menu .cat-mega-menu-2 > li {
 	padding: 0;
 }
 .shop-add-action .add-actions-link li.add-cart {
-	margin: 0 0 25px;;
+	margin: 0 0 25px;
 }
+
+.shop-add-action .add-actions-link li.add-cart button{
+	width: 100%;
+	text-align: center;
+}
+
 .shop-add-action .add-actions-link li.wishlist,
 .shop-add-action .add-actions-link li:last-child {
 	display: block;
 	width: 100%;
 	background: transparent;
 }
-.shop-add-action .add-actions-link li.wishlist a,
-.shop-add-action .add-actions-link li:last-child a.quick-view {
+.shop-add-action .add-actions-link li.wishlist a, li.wishlist button,
+.shop-add-action .add-actions-link li:last-child a.quick-view  {
 	text-align: left;
 	background: transparent;
 	font-size: 14px;
 }
 .product-list-view .shop-add-action ul li a i {
 	padding-right: 10px;
+}
+
+.product-list-view .shop-add-action ul li button i {
+	padding-right: 10px;
+}
+.product-list-view .shop-add-action ul li:hover button,
+.product-list-view .shop-add-action ul li:hover button i{
+	cursor: pointer;
+	color: #242424;
 }
 /*----------------------------------------*/
 /* 6.2 Li's Frequently Asked Question(FAQ)
