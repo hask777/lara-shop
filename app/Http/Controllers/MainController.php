@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
 class MainController extends Controller
@@ -16,8 +17,12 @@ class MainController extends Controller
     public function index()
     {
         $products = Product::find([1,2,3]);
-        // dump($products);
-        return view('index')->with('products', $products);
+        $categories = Category::all();
+        dump($categories);
+        return view('index')->with([
+            'products'=> $products,
+            'categories' => $categories
+        ]);
     }
 
     /**
