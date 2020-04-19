@@ -51,12 +51,12 @@
                                                                             <input type="hidden" name="id" value="{{ $product->id }}">
                                                                             <input type="hidden" name="name" value="{{ $product->name }}">
                                                                             <input type="hidden" name="price" value="{{ $product->price }}">
-                                                                            <button type="submit" > <i class="fa fa-heart-o"></i>Add to wishlist</button>
+                                                                            <button type="submit" > <i class="fa fa-heart-o"></i>Добавить в избранное</button>
                                                                         </form>
                                                                     </li>
                                                                    
-                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="{{route('shop.show', $product->slug)}}"><i class="fa fa-eye"></i>Quick view</a></li>
-                                                                </ul>
+                                                                {{-- <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="{{route('shop.show', $product->slug)}}"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                                </ul> --}}
                                                             </div>
                                                         </div>
                                                     </div>

@@ -122,6 +122,7 @@
                             <li><a href="contact.html">Contact</a></li>
                             <li><a href="shop-left-sidebar.html">Smartwatch</a></li>
                             <li><a href="{{route('cart.index')}}">Корзина</a></li>
+                            <li><a href="{{route('checkout.index')}}">Оформить заказ</a></li>
                         </ul>
                     </nav>
                 </div>

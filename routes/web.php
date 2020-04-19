@@ -16,6 +16,8 @@ Route::get('/cart/{product}', 'CartController@addToWishlist')->name('cart.wishli
 // Whishlist
 Route::get('/wishlist', 'WishlistController@index')->name('wishlist.index');
 Route::post('/wishlist/{product}', 'WishlistController@store')->name('wishlist.store');
+// Checkout
+Route::get('/checkoutpage', 'CheckoutController@index')->name('checkout.index');
 
 Route::get('empty', function(){
     Cart::destroy();

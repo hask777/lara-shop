@@ -41,11 +41,11 @@
                                                                             </form>
                                                                         </li>
 
-                                                                        <li>
+                                                                        {{-- <li>
                                                                             <a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter">
                                                                                 <i class="fa fa-eye"></i>
                                                                             </a>
-                                                                        </li>
+                                                                        </li> --}}
                                                                          <li>
                                                                             <form action="{{ route('wishlist.store', $product->id) }}" method="POST">
                                                                                 {{ csrf_field() }}

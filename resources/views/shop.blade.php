@@ -66,7 +66,7 @@
                                         <div class="product-area shop-product-area">
                                             <div class="row">
                                                 @foreach($products as $product)
-                                                   @include('partials.shop.product-cart-boxed')
+                                                   @include('partials.shop-cart.product-cart-boxed')
                                                 @endforeach
                                             </div>
                                         </div>
@@ -75,7 +75,7 @@
                                         <div class="row">
                                             <div class="col">
                                                 @foreach($products as $product)
-                                                     @include('partials.shop.product-cart-inline')
+                                                     @include('partials.shop-cart.product-cart-inline')
                                                 @endforeach
                                                 <div class="row product-layout-list last-child">
                                                     <div class="col-lg-3 col-md-5 ">
