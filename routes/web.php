@@ -3,6 +3,8 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 // Main
 Route::get('/', 'MainController@index')->name('index');
+// Route::get('/{product}', 'MainController@show')->name('index.show');
+
 // Shop
 Route::get('/shop', 'ShopController@index')->name('shop.index');
 Route::get('/shop/{product}', 'ShopController@show')->name('shop.show');

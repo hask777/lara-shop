@@ -103,6 +103,7 @@
         <script src="{{asset('js/scrollUp.min.js')}}"></script>
         <!-- Main/Activator js -->
         <script src="{{asset('js/main.js')}}"></script>
+        <script src="{{asset('js/modal.js')}}"></script>
     </body>
 
 <!-- index30:23-->

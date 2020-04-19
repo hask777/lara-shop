@@ -15,8 +15,8 @@ class MainController extends Controller
      */
     public function index()
     {
-        $products = Product::inRandomOrder()->take(8)->get();
-        // dd($products);
+        $products = Product::find([1,2,3]);
+        // dump($products);
         return view('index')->with('products', $products);
     }
 
@@ -38,7 +38,7 @@ class MainController extends Controller
      */
     public function store(Request $request)
     {
-
+       
     }
 
     /**
@@ -49,7 +49,7 @@ class MainController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**

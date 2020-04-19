@@ -1,3 +1,4 @@
+{{-- 
 <div class="modal fade modal-wrapper" id="exampleModalCenter" >
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -44,8 +45,8 @@
                     <div class="col-lg-7 col-md-6 col-sm-6">
                         <div class="product-details-view-content pt-60">
                             <div class="product-info">
-                            <h2></h2>
-                                <span class="product-details-ref">Reference: demo_15</span>
+                            <h2>Name</h2>
+                            <span class="product-details-ref"></span>
                                 <div class="rating-box pt-20">
                                     <ul class="rating rating-with-review-item">
                                         <li><i class="fa fa-star-o"></i></li>
@@ -58,7 +59,7 @@
                                     </ul>
                                 </div>
                                 <div class="price-box pt-20">
-                                    <span class="new-price new-price-2">${{dump($products)}}</span>
+                                    <span class="new-price new-price-2">$</span>
                                 </div>
                                 <div class="product-desc">
                                     <p>
@@ -109,4 +110,4 @@
     </div>
     
 </div>
-
+ --}}

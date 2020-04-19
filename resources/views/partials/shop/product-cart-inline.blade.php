@@ -55,7 +55,7 @@
                                                                         </form>
                                                                     </li>
                                                                    
-                                                                    <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="#"><i class="fa fa-eye"></i>Quick view</a></li>
+                                                                <li><a class="quick-view" data-toggle="modal" data-target="#exampleModalCenter" href="{{route('shop.show', $product->slug)}}"><i class="fa fa-eye"></i>Quick view</a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
