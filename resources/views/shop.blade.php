@@ -20,11 +20,12 @@
                     <div class="row">
                         <div class="col-lg-9 order-1 order-lg-2">
                             <!-- Begin Li's Banner Area -->
-                            <div class="single-banner shop-page-banner">
+                            {{-- <div class="single-banner shop-page-banner">
                                 <a href="#">
                                     <img src="images/bg-banner/2.jpg" alt="Li's Static Banner">
                                 </a>
-                            </div>
+                            </div> --}}
+                            <h2>{{$categoryName}}</h2>
                             <!-- Li's Banner Area End Here -->
                             <!-- shop-top-bar start -->
                             <div class="shop-top-bar mt-30">
@@ -65,19 +66,27 @@
                                     <div id="grid-view" class="tab-pane fade" role="tabpanel">
                                         <div class="product-area shop-product-area">
                                             <div class="row">
-                                                @foreach($products as $product)
-                                                   @include('partials.shop-cart.product-cart-boxed')
-                                                @endforeach
+
+                                                @forelse ($products as $product)
+                                                    @include('partials.shop-cart.product-cart-inline') 
+                                                @empty
+                                                    <div>В этой категории нет Товаров!</div>
+                                                @endforelse
+                                                
                                             </div>
                                         </div>
                                     </div>
                                     <div id="list-view" class="tab-pane fade product-list-view active show" role="tabpanel">
                                         <div class="row">
                                             <div class="col">
-                                                @foreach($products as $product)
-                                                     @include('partials.shop-cart.product-cart-inline')
-                                                @endforeach
-                                                <div class="row product-layout-list last-child">
+
+                                                @forelse ($products as $product)
+                                                    @include('partials.shop-cart.product-cart-inline') 
+                                                @empty
+                                                    <div>В этой категории нет Товаров!</div>
+                                                @endforelse
+                                                                                               
+                                                {{-- <div class="row product-layout-list last-child">
                                                     <div class="col-lg-3 col-md-5 ">
                                                         <div class="product-image">
                                                             <a href="single-product.html">
@@ -120,7 +129,7 @@
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>

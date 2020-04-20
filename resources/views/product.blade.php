@@ -22,33 +22,33 @@
                             <div class="product-details-left">
                                 <div class="product-details-images slider-navigation-1">
                                     <div class="lg-image">
-                                        <a class="popup-img venobox vbox-item" href="{{asset('images/product/large-size/1.jpg')}}" data-gall="myGallery">
-                                            <img src="{{asset('images/product/large-size/1.jpg')}}" alt="product image">
+                                        <a class="popup-img venobox vbox-item" href="{{asset('images/product/large-size/'.$product->slug.'.jpg')}}" data-gall="myGallery">
+                                            <img src="{{asset('images/product/large-size/'.$product->slug.'.jpg')}}" alt="product image">
                                         </a>
                                     </div>
                                     <div class="lg-image">
-                                        <a class="popup-img venobox vbox-item" href="{{asset('images/product/large-size/2.jpg')}}" data-gall="myGallery">
-                                            <img src="{{asset('images/product/large-size/2.jpg')}}" alt="product image">
+                                        <a class="popup-img venobox vbox-item" href="{{asset('images/product/large-size/'.$product->slug.'.jpg')}}" data-gall="myGallery">
+                                            <img src="{{asset('images/product/large-size/'.$product->slug.'.jpg')}}" alt="product image">
                                         </a>
                                     </div>
                                     <div class="lg-image">
-                                        <a class="popup-img venobox vbox-item" href="{{asset('images/product/large-size/3.jpg')}}" data-gall="myGallery">
-                                            <img src="{{asset('images/product/large-size/3.jpg')}}" alt="product image">
+                                        <a class="popup-img venobox vbox-item" href="{{asset('images/product/large-size/'.$product->slug.'.jpg')}}" data-gall="myGallery">
+                                            <img src="{{asset('images/product/large-size/'.$product->slug.'.jpg')}}" alt="product image">
                                         </a>
                                     </div>
                                     <div class="lg-image">
-                                        <a class="popup-img venobox vbox-item" href="{{asset('images/product/large-size/4.jpg')}}" data-gall="myGallery">
-                                            <img src="{{asset('images/product/large-size/4.jpg')}}" alt="product image">
+                                        <a class="popup-img venobox vbox-item" href="{{asset('images/product/large-size/'.$product->slug.'.jpg')}}" data-gall="myGallery">
+                                            <img src="{{asset('images/product/large-size/'.$product->slug.'.jpg')}}" alt="product image">
                                         </a>
                                     </div>
                                     <div class="lg-image">
-                                        <a class="popup-img venobox vbox-item" href="{{asset('images/product/large-size/5.jpg')}}" data-gall="myGallery">
-                                            <img src="{{asset('images/product/large-size/5.jpg')}}" alt="product image">
+                                        <a class="popup-img venobox vbox-item" href="{{asset('images/product/large-size/'.$product->slug.'.jpg')}}" data-gall="myGallery">
+                                            <img src="{{asset('images/product/large-size/'.$product->slug.'.jpg')}}" alt="product image">
                                         </a>
                                     </div>
                                     <div class="lg-image">
-                                        <a class="popup-img venobox vbox-item" href="{{asset('images/product/large-size/6.jpg')}}" data-gall="myGallery">
-                                            <img src="{{asset('images/product/large-size/6.jpg')}}" alt="product image">
+                                        <a class="popup-img venobox vbox-item" href="{{asset('images/product/large-size/'.$product->slug.'.jpg')}}" data-gall="myGallery">
+                                            <img src="{{asset('images/product/large-size/'.$product->slug.'.jpg')}}" alt="product image">
                                         </a>
                                     </div>
                                 </div>

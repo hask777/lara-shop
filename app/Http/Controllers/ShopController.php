@@ -7,6 +7,7 @@ use App\Product;
 use App\Category;
 
 
+
 class ShopController extends Controller
 {
     /**
@@ -21,18 +22,21 @@ class ShopController extends Controller
             $products = Product::with('categories')->whereHas('categories', function ($query) {
                 $query->where('slug', request()->category);
             })->get();
-           $categories = Category::all();
+            $categories = Category::all();
+            $categoryName = $categories->where('slug', request()->category)->first()->name;
 
         }else{
             $products = Product::inRandomOrder()->take(8)->get();
             $categories = Category::all();
+            $categoryName = "Feautered";
         }
        
 
-        dump($categories);
+        dump($products);
         return view('shop')->with([
             'products'=> $products,
-            'categories' => $categories
+            'categories' => $categories,
+            'categoryName' => $categoryName
         ]);
 
     }
