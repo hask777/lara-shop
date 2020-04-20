@@ -45,8 +45,8 @@
                                 <!-- product-select-box start -->
                                 <div class="product-select-box">
                                     <div class="product-short">
-                                        <p>Sort By:</p>
-                                        <select class="nice-select">
+                                        <p>Сортировать:</p>
+                                        {{-- <select class="nice-select">
                                             <option value="trending">Relevance</option>
                                             <option value="sales">Name (A - Z)</option>
                                             <option value="sales">Name (Z - A)</option>
@@ -54,7 +54,24 @@
                                             <option value="date">Rating (Lowest)</option>
                                             <option value="price-asc">Model (A - Z)</option>
                                             <option value="price-asc">Model (Z - A)</option>
-                                        </select>
+                                        </select> --}}
+                                        <style>
+                                            .price_filter{
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                            }
+                                            .price_filter a{
+                                                margin-right: 10px;
+                                                margin-left: 10px;
+
+                                            }
+                                        </style>      
+                                        <div class="price_filter">
+                                            <a href="{{ route('shop.index', ['category' => request()->category, 'sort' => 'low_high'])}}">Цена: возрастающая</a> | 
+                                            <a href="{{ route('shop.index', ['category' => request()->category, 'sort' => 'high_low'])}}">Цена: убывающая</a>
+                                        </div>
+                                       
                                     </div>
                                 </div>
                                 <!-- product-select-box end -->
@@ -68,7 +85,7 @@
                                             <div class="row">
 
                                                 @forelse ($products as $product)
-                                                    @include('partials.shop-cart.product-cart-inline') 
+                                                    @include('partials.shop-cart.product-cart-boxed') 
                                                 @empty
                                                     <div>В этой категории нет Товаров!</div>
                                                 @endforelse
@@ -139,6 +156,7 @@
                                                 <p>Showing 1-12 of 13 item(s)</p>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
+                                                
                                                 <ul class="pagination-box">
                                                     <li><a href="#" class="Previous"><i class="fa fa-chevron-left"></i> Previous</a>
                                                     </li>
@@ -154,6 +172,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {{ $products->appends(request()->input())->links() }}
                             <!-- shop-products-wrapper end -->
                         </div>
                         @include('partials.filter')

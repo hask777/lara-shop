@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 
-
-
 class ShopController extends Controller
 {
     /**
@@ -17,26 +15,31 @@ class ShopController extends Controller
      */
     public function index()
     {
-        if(request()->category){
+        $pagination = 9;
+        $categories = Category::all();
 
+        if (request()->category) {
             $products = Product::with('categories')->whereHas('categories', function ($query) {
                 $query->where('slug', request()->category);
-            })->get();
-            $categories = Category::all();
-            $categoryName = $categories->where('slug', request()->category)->first()->name;
-
-        }else{
-            $products = Product::inRandomOrder()->take(8)->get();
-            $categories = Category::all();
-            $categoryName = "Feautered";
+            });
+            $categoryName = optional($categories->where('slug', request()->category)->first())->name;
+        } else {
+            $products = Product::where('featured', true);
+            $categoryName = 'Featured';
         }
-       
 
-        dump($products);
+        if (request()->sort == 'low_high') {
+            $products = $products->orderBy('price')->paginate($pagination);
+        } elseif (request()->sort == 'high_low') {
+            $products = $products->orderBy('price', 'desc')->paginate($pagination);
+        } else {
+            $products = $products->paginate($pagination);
+        }
+
         return view('shop')->with([
-            'products'=> $products,
+            'products' => $products,
             'categories' => $categories,
-            'categoryName' => $categoryName
+            'categoryName' => $categoryName,
         ]);
 
     }

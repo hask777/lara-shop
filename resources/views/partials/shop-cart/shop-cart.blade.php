@@ -3,7 +3,7 @@
     <div class="single-product-wrap">
         <div class="product-image">
             <a href="{{route('shop.show', $product->slug)}}">
-                <img src="images/product/large-size/1.jpg" alt="Li's Product Image">
+                <img src="{{asset('images/product/large-size/'.$product->slug.'.jpg')}}" alt="Li's Product Image">
             </a>
             <span class="sticker">New</span>
         </div>

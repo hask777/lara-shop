@@ -16,9 +16,10 @@ class MainController extends Controller
      */
     public function index()
     {
-        $products = Product::find([1,2,3]);
+        // $products = Product::find([1,2,3]);
+        $products = Product::where('featured', true)->take(10)->inRandomOrder()->get();
         $categories = Category::all();
-        dump($categories);
+        // dump($categories);
         return view('index')->with([
             'products'=> $products,
             'categories' => $categories
